@@ -16,7 +16,7 @@ export default function Carta({pergunta, resposta, indice, setIndice, tamanhoArr
     function responder(alternativa){
         setTrocarBotao("");
         setBorda(alternativa);
-        if(alternativa !== "correto"){
+        if(alternativa === "incorreto"){
             setResultadoCerto("");
         }
     }
@@ -33,16 +33,16 @@ export default function Carta({pergunta, resposta, indice, setIndice, tamanhoArr
     }
 
     return (
-        <div className= {`carta ${borda}`}>
+        <div data-identifier="flashcard" className= {`carta ${borda}`}>
             {(virarCarta === "frente") ? 
             <div className="frente">
-                <p className="contador">{indice+1}/{tamanhoArray}</p>
+                <p data-identifier="counter" className="contador">{indice+1}/{tamanhoArray}</p>
                 <p className="pergunta">{pergunta}</p>
-                <img src={botãoVirar} onClick={virar} className ="botao-virar-carta"/>
+                <img data-identifier="arrow" alt="seta" src={botãoVirar} onClick={virar} className ="botao-virar-carta"/>
             </div>
             :
             <div className="verso">
-                <p className="contador">{indice+1}/{tamanhoArray}</p>
+                <p data-identifier="counter" className="contador">{indice+1}/{tamanhoArray}</p>
                 <p className="pergunta-menor">{pergunta}</p>
                 <p className="resposta"> {resposta}</p>
                 
@@ -51,10 +51,10 @@ export default function Carta({pergunta, resposta, indice, setIndice, tamanhoArr
                     <button className="botao-resposta botao-neutro" onClick={() => responder("neutro")}>Aprendi agora</button>
                     <button className="botao-resposta botao-incorreto" onClick={() => responder("incorreto")}>Não lembrei</button>
                     <button className="botao-resposta botao-esforco" onClick={() => responder("esforco")}>Lembrei com esforço</button>
-                    <button className="botao-resposta botao-correto" onClick={() => responder("correto")}>Zap</button>
+                    <button className="botao-resposta botao-correto" onClick={() => responder("correto")}><strong>Zap!</strong></button>
                 </div>
                 :
-                <img src={botãoVirar} onClick={passarCarta} className ="botao-virar-carta"/>
+                <img data-identifier="arrow" alt="seta" src={botãoVirar} onClick={passarCarta} className ="botao-virar-carta"/>
             }
             </div>}
         </div>

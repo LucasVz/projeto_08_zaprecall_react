@@ -7,10 +7,10 @@ export default function TelaFinalIncorreto(){
             <MiniLogo />
             <div className="conteudo-resposta">
                 <div className="mesma-linha">
-                    <p className="titulo-resposta">Putz...  </p>
+                    <p className="titulo-resposta">Putz..</p>
                     <img src={emoteTriste} alt="emote triste" />
                 </div>
-                <p className="frase-resposta">Você esqueceu alguns flashcards...  Não desanime! Na próxima você consegue!</p>
+                <p className="frase-resposta">Você esqueceu alguns flashcards..  Não desanime! Na próxima você consegue!</p>
             </div>
         </>
     )

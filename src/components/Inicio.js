@@ -5,7 +5,7 @@ export default function Inicio({setTela}){
     return(
         <div className = "inicio">
             <Logo />
-            <BotaoIniciar setTela={setTela}/>
+            <BotaoIniciar data-identifier="start-zap-recall" setTela={setTela}/>
         </div>
     );
 }
